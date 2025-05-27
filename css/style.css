@@ -1,0 +1,84 @@
+:root {
+    --color-primario: #4CAF50;
+    --color-secundario: #f9f9f9;
+    --color-texto: #333;
+    --fuente-principal: 'Arial', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente-principal);
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+}
+
+header {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.categories, .games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.category, .game-card {
+    background: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    animation: slideIn 1s ease;
+}
+
+.category:hover, .game-card:hover {
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.discount {
+    font-style: italic;
+    color: #e91e63;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .categories, .games {
+        flex-direction: column;
+        align-items: center;
+    }
+}
