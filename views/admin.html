@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Administrador - Techbat Express</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center mt-4">Panel de Administración</h2>
+
+    <div id="alertContainer" class="mt-3"></div>
+
+    <form id="formJuego" class="container mt-3" style="max-width: 600px;">
+      <div class="mb-3">
+        <label for="nombreJuego" class="form-label">Nombre del juego</label>
+        <input type="text" class="form-control" id="nombreJuego" required>
+      </div>
+      <div class="mb-3">
+        <label for="categoria" class="form-label">Categoría</label>
+        <select class="form-select" id="categoria" required>
+          <option value="">Selecciona una categoría</option>
+          <option value="Familiares">Familiares</option>
+          <option value="Estrategia">Estrategia</option>
+          <option value="Infantiles">Infantiles</option>
+          <option value="Clásicos">Clásicos</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="imagen" class="form-label">URL de imagen</label>
+        <input type="url" class="form-control" id="imagen" required>
+      </div>
+      <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="precio" required min="0" step="100">
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Agregar Juego</button>
+      </div>
+    </form>
+
+    <hr />
+
+    <h4 class="text-center mt-4">Juegos Agregados</h4>
+    <table class="table table-bordered mt-3" id="tablaJuegos">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Categoría</th>
+          <th>Imagen</th>
+          <th>Precio</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="text-center mt-4">
+      <a href="index.html" class="btn btn-secondary">Volver al inicio</a>
+    </div>
+  </div>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>
